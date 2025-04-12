@@ -10,35 +10,22 @@
   <div class="app-container">
     <h1>Minhas Tarefas</h1>
 
-    <!-- Formulário de Adicionar Tarefa -->
-    <div class="task-form">
-      <input type="text" id="task-title" placeholder="Nova tarefa..." />
-      <select id="task-category">
-        <option value="Pessoal">Pessoal</option>
-        <option value="Trabalho">Trabalho</option>
-        <option value="Estudos">Estudos</option>
-      </select>
-      <label>
-        <input type="checkbox" id="task-today" />
-        Tarefa do dia
-      </label>
-      <input type="datetime-local" id="task-reminder" />
-      <button onclick="addTask()">Adicionar</button>
-    </div>
-
-    <!-- Filtro para Mostrar as Tarefas -->
+    <!-- Filtros de visualização -->
     <div class="filters">
-      <button onclick="filterTasks('all')" class="filter-button">Todas</button>
-      <button onclick="filterTasks('today')" class="chip-button">Tarefas do Dia</button>
+      <button onclick="filterTasks('all')" class="chip-button" id="chip-all">Todas</button>
+      <button onclick="filterTasks('today')" class="chip-button" id="chip-today">Hoje</button>
     </div>
 
-    <!-- Listagem de Tarefas Pendentes -->
+    <!-- Listagem de Tarefas -->
     <h2>Tarefas Pendentes</h2>
     <div id="task-list" class="task-list"></div>
 
-    <!-- Listagem de Tarefas Concluídas -->
     <h2>Tarefas Concluídas</h2>
     <div id="completed-list" class="task-list"></div>
+
+    <div style="margin-top: 30px; text-align: center;">
+      <a href="nova-tarefa.html" class="chip-button">+ Nova Tarefa</a>
+    </div>
   </div>
 
   <script src="script.js"></script>
