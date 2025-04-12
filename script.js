@@ -12,7 +12,7 @@ function loadTasks() {
 
   tasksToDisplay.forEach((task, index) => {
     const div = document.createElement('div');
-    div.className = 'task-item';
+    div.className = `task-item ${task.completed ? 'completed' : ''}`;
 
     div.innerHTML = `
       <div class="task-info">
@@ -31,7 +31,7 @@ function loadTasks() {
 
   completedTasks.forEach((task, index) => {
     const div = document.createElement('div');
-    div.className = 'task-item';
+    div.className = 'task-item completed';
 
     div.innerHTML = `
       <div class="task-info">
@@ -56,6 +56,14 @@ function addTask() {
     return;
   }
 
+  const taskReminderDate = new Date(reminder);
+  const todayDate = new Date();
+  
+  // Automatically add task to "Tarefa do dia" if the date is today
+  if (taskReminderDate.toDateString() === todayDate.toDateString()) {
+    today = true;
+  }
+
   const newTask = { title, category, reminder, completed: false, today };
   tasks.push(newTask);
   localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -78,6 +86,13 @@ function markComplete(index) {
 function filterTasks(type) {
   filteredTasks = type;
   loadTasks();
+
+  const chipButton = document.querySelector('.chip-button');
+  if (type === 'today') {
+    chipButton.classList.add('active');
+  } else {
+    chipButton.classList.remove('active');
+  }
 }
 
 window.onload = function() {
