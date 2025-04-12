@@ -58,8 +58,8 @@ function addTask() {
 
   const taskReminderDate = new Date(reminder);
   const todayDate = new Date();
-  
-  // Automatically add task to "Tarefa do dia" if the date is today
+
+  // Adiciona automaticamente a tarefa ao "Tarefa do Dia" se a data for hoje
   if (taskReminderDate.toDateString() === todayDate.toDateString()) {
     today = true;
   }
