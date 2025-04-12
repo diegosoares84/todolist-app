@@ -8,25 +8,35 @@
 </head>
 <body>
   <div class="app-container">
-    <h1>Minhas Tarefas</h1>
+    <header class="app-header">
+      <h1 class="title">Minhas Tarefas</h1>
+    </header>
 
-    <!-- Filtros de visualização -->
     <div class="filters">
-      <button onclick="filterTasks('all')" class="chip-button" id="chip-all">Todas</button>
+      <button onclick="filterTasks('all')" class="chip-button active" id="chip-all">Todas</button>
       <button onclick="filterTasks('today')" class="chip-button" id="chip-today">Hoje</button>
     </div>
 
-    <!-- Listagem de Tarefas -->
-    <h2>Tarefas Pendentes</h2>
-    <div id="task-list" class="task-list"></div>
+    <section>
+      <h2>Tarefas Pendentes</h2>
+      <div id="task-list" class="task-list"></div>
 
-    <h2>Tarefas Concluídas</h2>
-    <div id="completed-list" class="task-list"></div>
-
-    <div style="margin-top: 30px; text-align: center;">
-      <a href="nova-tarefa.html" class="chip-button">+ Nova Tarefa</a>
-    </div>
+      <h2>Tarefas Concluídas</h2>
+      <div id="completed-list" class="task-list"></div>
+    </section>
   </div>
+
+  <!-- Menu estilo iOS -->
+  <nav class="ios-menu">
+    <a href="index.html" class="ios-menu-item active">
+      <span>📋</span>
+      <p>Tarefas</p>
+    </a>
+    <a href="nova-tarefa.html" class="ios-menu-item">
+      <span>➕</span>
+      <p>Nova</p>
+    </a>
+  </nav>
 
   <script src="script.js"></script>
 </body>
