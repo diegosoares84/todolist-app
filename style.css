@@ -1,140 +1,59 @@
-/* Cor base e tipografia */
-:root {
-  --background: #ffffff;
-  --text: #333333;
-  --accent: #007AFF; /* Azul padrão do iOS */
-  --border: #E0E0E0;
-  --subtle: #999999;
-}
-
-/* Estilo geral */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  background-color: var(--background);
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  color: var(--text);
-  flex-direction: column;
-}
-
-/* Título alinhado à esquerda */
-h1 {
+/* Estilo do título alinhado à esquerda */
+.title {
+  font-size: 2rem;
+  font-weight: bold;
   text-align: left;
-  font-weight: 600;
-  font-size: 36px;
-  margin: 20px 0;
-  width: 100%; /* Certifique-se que ocupa toda a largura para alinhamento */
-  padding-left: 20px; /* Espaçamento à esquerda */
+  margin-bottom: 1rem;
 }
 
-/* Container de aplicação */
-.app-container {
+/* Menu estilo iOS */
+.ios-menu {
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  max-width: 480px; /* Máxima largura de tela */
-  padding: 20px;
-  box-sizing: border-box;
+  display: flex;
+  background-color: white;
+  border-top: 1px solid #ccc;
+  justify-content: space-around;
+  padding: 0.4rem 0;
+  z-index: 100;
 }
 
-/* Formulário de tarefas */
-.task-form {
-  margin-bottom: 20px;
+.ios-menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  transition: opacity 0.3s;
 }
 
-input[type="text"],
-select,
-input[type="datetime-local"] {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-size: 16px;
-  color: var(--text);
+.ios-menu-item span {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
 }
 
-input[type="checkbox"] {
-  margin-right: 8px;
+.ios-menu-item.active,
+.ios-menu-item:hover {
+  opacity: 1;
 }
 
-button {
-  padding: 12px;
-  width: 100%;
-  font-size: 16px;
-  border-radius: 8px;
-  background-color: var(--accent);
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #0051a3;
-}
-
-/* Botões chip */
+/* Chip style */
 .chip-button {
-  padding: 8px 16px;
-  font-size: 14px;
-  background-color: #f1f1f6;
-  color: var(--text);
+  border: 1px solid black;
   border-radius: 20px;
-  border: 1px solid var(--border);
-  margin: 5px;
+  padding: 6px 12px;
+  margin-right: 8px;
+  font-size: 0.9rem;
+  background: white;
+  color: black;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: 0.3s;
 }
 
 .chip-button.active {
-  background-color: var(--accent);
+  background: black;
   color: white;
-}
-
-/* Lista de tarefas */
-.task-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.task-item {
-  background-color: #fafafa;
-  border: 1px solid var(--border);
-  padding: 16px;
-  border-radius: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.task-item.completed {
-  background-color: #e6ffe6; /* Tarefa concluída com fundo verde claro */
-}
-
-.task-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.task-category {
-  font-size: 12px;
-  color: var(--subtle);
-}
-
-.task-time {
-  font-size: 12px;
-  color: var(--subtle);
-}
-
-.task-item label {
-  color: var(--text);
-}
-
-.task-item.completed label {
-  color: #888888; /* Cor mais clara para tarefas concluídas */
 }
