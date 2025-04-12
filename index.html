@@ -10,6 +10,7 @@
   <div class="app-container">
     <h1>Minhas Tarefas</h1>
 
+    <!-- Formulário de Adicionar Tarefa -->
     <div class="task-form">
       <input type="text" id="task-title" placeholder="Nova tarefa..." />
       <select id="task-category">
@@ -25,15 +26,18 @@
       <button onclick="addTask()">Adicionar</button>
     </div>
 
+    <!-- Filtro para Mostrar as Tarefas -->
     <div class="filters">
-      <button onclick="filterTasks('all')">Todas</button>
-      <button class="chip-button" onclick="filterTasks('today')">Tarefas do Dia</button>
+      <button onclick="filterTasks('all')" class="filter-button">Todas</button>
+      <button onclick="filterTasks('today')" class="chip-button">Tarefas do Dia</button>
     </div>
 
-    <h2>Tarefas pendentes</h2>
+    <!-- Listagem de Tarefas Pendentes -->
+    <h2>Tarefas Pendentes</h2>
     <div id="task-list" class="task-list"></div>
 
-    <h2>Tarefas concluídas</h2>
+    <!-- Listagem de Tarefas Concluídas -->
+    <h2>Tarefas Concluídas</h2>
     <div id="completed-list" class="task-list"></div>
   </div>
 
