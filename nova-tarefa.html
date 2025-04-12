@@ -8,7 +8,9 @@
 </head>
 <body>
   <div class="app-container">
-    <h1>Nova Tarefa</h1>
+    <header class="app-header">
+      <h1 class="title">Nova Tarefa</h1>
+    </header>
 
     <div class="task-form">
       <input type="text" id="task-title" placeholder="Título da tarefa..." />
@@ -20,11 +22,19 @@
       <input type="datetime-local" id="task-reminder" />
       <button onclick="addTask()">Salvar</button>
     </div>
-
-    <div style="text-align: center; margin-top: 20px;">
-      <a href="index.html" class="chip-button">← Voltar</a>
-    </div>
   </div>
+
+  <!-- Menu estilo iOS -->
+  <nav class="ios-menu">
+    <a href="index.html" class="ios-menu-item">
+      <span>📋</span>
+      <p>Tarefas</p>
+    </a>
+    <a href="nova-tarefa.html" class="ios-menu-item active">
+      <span>➕</span>
+      <p>Nova</p>
+    </a>
+  </nav>
 
   <script src="script.js"></script>
 </body>
