@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nova Tarefa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <h1>Nova Tarefa</h1>
+
+    <div class="task-form">
+      <input type="text" id="task-title" placeholder="Título da tarefa..." />
+      <select id="task-category">
+        <option value="Pessoal">Pessoal</option>
+        <option value="Trabalho">Trabalho</option>
+        <option value="Estudos">Estudos</option>
+      </select>
+      <input type="datetime-local" id="task-reminder" />
+      <button onclick="addTask()">Salvar</button>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="index.html" class="chip-button">← Voltar</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
